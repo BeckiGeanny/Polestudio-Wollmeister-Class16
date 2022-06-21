@@ -1,0 +1,216 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  background: url("../img/Poledance1.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed; }
+
+h1 {
+  color: #9A8C98;
+  background-color: whitesmoke;
+  text-align: center;
+  font-size: 30pt;
+  font-family: "AlexBrush-Regular"; }
+
+h2 {
+  font-family: "PlayfairDisplay-Regular";
+  font-size: 25px;
+  color: #707C95;
+  text-align: left; }
+
+h3 {
+  font-family: "PlayfairDisplay-Regular";
+  font-size: 20px;
+  color: #707C95;
+  text-align: left;
+  margin-left: 40px; }
+
+p {
+  font-family: "PlayfairDisplay-Regular"; }
+
+@font-face {
+  font-family: "AlexBrush-Regular";
+  src: url("../fonts/AlexBrush-Regular.ttf"); }
+
+@font-face {
+  font-family: "PlayfairDisplay-Regular";
+  src: url("../fonts/PlayfairDisplay-Regular.otf"); }
+
+nav {
+  margin-bottom: 50px; }
+
+.PoleDance {
+  background-color: whitesmoke;
+  border: 7px solid #7d667a;
+  box-align: center;
+  padding: 30px; }
+
+.Home {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  row-gap: 0.5%;
+  column-gap: 30%;
+  place-items: center;
+  place-content: center;
+  align-content: flex-start; }
+
+.Newsletter {
+  background-color: whitesmoke;
+  border: 7px solid #7d667a;
+  padding: 30px; }
+
+.SignUp {
+  width: 20%;
+  font-size: small;
+  background-color: #3a4c72;
+  color: white;
+  margin-top: 10px;
+  margin-left: 240px; }
+
+footer {
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  grid-template-rows: auto;
+  place-items: center;
+  place-content: center; }
+
+.UEvents {
+  background-color: whitesmoke;
+  border: 7px solid #7d667a;
+  padding: 30px; }
+
+@media screen and (min-width: 768px) {
+  .Home {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 10%;
+    column-gap: 5%;
+    place-items: justify;
+    place-content: justify; } }
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 90pt; } }
+
+.topic {
+  background-color: whitesmoke;
+  text-align: center;
+  margin-bottom: 20px; }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: "PlayfairDisplay-Regular"; }
+
+li {
+  display: inline-block; }
+
+li a {
+  display: block;
+  text-align: justify;
+  text-decoration: none;
+  padding: 8px;
+  background-color: #bebbb7; }
+
+li a:hover {
+  background-color: #b79bb7; }
+
+.products li {
+  display: block; }
+
+.products li a {
+  text-align: justify;
+  text-decoration: none;
+  background-color: #baaab8;
+  width: 30%; }
+
+.event li {
+  display: block;
+  font-weight: bold; }
+
+.AboutUs {
+  width: auto;
+  background-color: aliceblue;
+  margin-bottom: 50px;
+  border: 7px solid #7d667a;
+  padding: 10px; }
+
+.FigureClass {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: baseline;
+  align-content: space-evenly;
+  font-family: "PlayfairDisplay-Regular"; }
+
+textarea {
+  width: 40%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical; }
+
+input[type=submit] {
+  background-color: #7d667a;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer; }
+
+.News {
+  background-color: aliceblue;
+  width: 50%; }
+
+.Event, .ContactBounce {
+  margin-left: 20%;
+  width: 20%;
+  font-size: 15px;
+  padding-right: 50px;
+  background-color: #7d667a;
+  color: white;
+  animation: bounce 1.5s infinite alternate; }
+
+@keyframes bounce {
+  to {
+    transform: scale(1.2); } }
+
+.ImgRight:hover {
+  transform: scale(1.5) translateX(220px);
+  transition: all 2s;
+  padding: 3em;
+  background-color: #bdacbb; }
+
+.ImgLeft:hover {
+  transform: scale(1.5) translateX(-220px);
+  transition: all 2s;
+  padding: 3em;
+  background-color: #bdacbb; }
+
+.table {
+  background-color: #c8bcc6;
+  width: auto;
+  margin: auto;
+  margin-bottom: 20px; }
+
+.col-md-8 {
+  background-color: aliceblue;
+  border: #7d667a solid 7px;
+  padding: 12px; }
+
+.btn--Facebook {
+  background-color: #3a5795; }
+
+.btn--Instagram {
+  background-color: #C25E30; }
+
+.social-icons {
+  text-align: center; }

@@ -1,0 +1,301 @@
+* {
+    box-sizing: border-box;
+}
+@import 'variables';
+
+body {
+    background: url("../img/Poledance1.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed
+}
+h1 {
+    color: $main-colour;
+    background-color: $background-colour-text;
+    text-align: center;
+    font-size: 30pt;
+    font-family: "AlexBrush-Regular";
+
+}
+
+h2 {
+    font: {
+        family: "PlayfairDisplay-Regular";
+        size: 25px;
+    }
+    color: $secondary-colour;
+    text-align: left;
+}
+
+h3 {
+    font: {
+        family: "PlayfairDisplay-Regular";
+        size: 20px;
+    }
+    color: $secondary-colour;
+    text-align: left;
+    margin-left: 40px;
+
+}
+
+p {
+    font-family: "PlayfairDisplay-Regular";
+}
+
+@font-face {
+    font-family: "AlexBrush-Regular";
+    src: url('../fonts/AlexBrush-Regular.ttf');
+}
+
+@font-face {
+    font-family: "PlayfairDisplay-Regular";
+    src: url('../fonts/PlayfairDisplay-Regular.otf');
+}
+
+nav{
+    margin-bottom: 50px;
+}
+
+.PoleDance {
+    background-color: $background-colour-text;
+    border: $border;
+    box-align: center;
+    padding: 30px;
+}
+
+.Home {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    row-gap: 0.5%;
+    column-gap: 30%;
+    place-items: center;
+    place-content: center;
+    align-content: flex-start;
+
+}
+
+.Newsletter {
+    background-color: $background-colour-text;
+    border: $border;
+    padding: 30px;
+
+}
+
+.SignUp {
+    width: 20%;
+    font-size: small;
+    background-color: $button-colour;
+    color: white;
+    margin-top: 10px;
+    margin-left: 240px;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    grid-template-rows: auto;
+    place-items: center;
+    place-content: center;
+}
+
+.UEvents {
+        background-color: $background-colour-text;
+        border: $border;
+        padding: 30px;
+}
+
+@media screen and (min-width: 768px) {
+    .Home {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 10%;
+    column-gap: 5%;
+    place-items: justify;
+    place-content: justify;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    h1 {
+        font-size: 90pt;
+    }
+}
+
+.topic {
+    background-color: whitesmoke;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: "PlayfairDisplay-Regular";
+
+}
+
+li {
+    display: inline-block;
+}
+
+li a {
+    display: block;
+    text-align: justify;
+    text-decoration: none;
+    padding: 8px;
+    background-color: rgb(190, 187, 183);
+}
+
+li a:hover {
+    background-color: rgb(183, 155, 183);
+}
+
+.products li {
+    display: block;
+}
+
+.products li a {
+    text-align: justify;
+    text-decoration: none;
+    background-color: #baaab8;
+    width: 30%;
+}
+
+.event li {
+    display: block;
+    font-weight: bold;
+}
+
+.AboutUs {
+    width: auto;
+    background-color: aliceblue;
+    margin-bottom: 50px;
+    border: 7px solid #7d667a;
+    padding: 10px;
+}
+
+.FigureClass {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: baseline;
+    align-content: space-evenly;
+    font-family: "PlayfairDisplay-Regular";
+
+}
+textarea {
+    width: 40%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #7d667a;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.News {
+    background-color: aliceblue;
+    width: 50%;
+}
+
+.Event {
+    margin-left: 20%;
+    width: 20%;
+    font-size: 15px;
+    padding-right: 50px;
+    background-color: #7d667a;
+    color: white;
+    animation: bounce 1.5s infinite alternate;
+}
+    
+@keyframes bounce {
+    to { transform: scale(1.2);
+}
+}
+
+.ContactBounce {
+    @extend .Event;
+    // margin-left: 40%;
+    // align-items: center;
+    // align-content: center;
+    // width: 20%;
+    // font-size: 20px;
+    // background-color: #c58bbc;
+    // color: black;
+    // animation: bounce 1.5s infinite alternate;
+    
+}
+
+.ImgRight:hover {
+   transform: scale(1.5) translateX(220px);
+   transition: all 2s;
+   padding: 3em;
+   background-color: #bdacbb;
+
+}
+
+@mixin IMGhover {
+    transition: all 2s;
+    padding: 3em;
+    background-color: #bdacbb;
+  }
+
+.ImgLeft:hover {
+    transform: scale(1.5) translateX(-220px);
+    @include IMGhover;
+    // transition: all 1.5s;
+    // padding: 3em;
+    // background-color: #bdacbb;
+    
+}
+
+.table {
+    background-color: #c8bcc6;
+    width: auto;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.col-md-8 {
+    background-color: aliceblue;
+    border: #7d667a solid 7px;
+    padding: 12px;
+  }
+
+  $socialmedia:(  
+Facebook:  #3a5795,
+Instagram: #C25E30
+);
+
+@each $network, $color in $socialmedia {
+    .btn--#{$network} {
+        background-color: $color;
+    }
+ }
+
+ $socialicons: (
+  center: center,
+  size: 35px
+);
+
+ .social-icons {
+    text-align: map-get($socialicons, center);
+
+  }
+
+  
+
+ 
