@@ -1,6 +1,14 @@
 * {
   box-sizing: border-box; }
 
+@font-face {
+  font-family: "AlexBrush-Regular";
+  src: url("../fonts/AlexBrush-Regular.ttf"); }
+
+@font-face {
+  font-family: "PlayfairDisplay-Regular";
+  src: url("../fonts/PlayfairDisplay-Regular.otf"); }
+
 body {
   background-image: linear-gradient(to right top, #f2f2f2, #e8e6eb, #e0dae3, #daceda, #d5c1d0);
   background-repeat: no-repeat;
@@ -29,18 +37,10 @@ h3 {
 p {
   font-family: "PlayfairDisplay-Regular"; }
 
-.schedule {
+.schedule, .Event-Box {
   background-color: whitesmoke;
   text-align: center;
   margin-bottom: 3%; }
-
-@font-face {
-  font-family: "AlexBrush-Regular";
-  src: url("../fonts/AlexBrush-Regular.ttf"); }
-
-@font-face {
-  font-family: "PlayfairDisplay-Regular";
-  src: url("../fonts/PlayfairDisplay-Regular.otf"); }
 
 nav {
   margin-bottom: 50px; }
@@ -71,12 +71,21 @@ nav {
       width: 100%;
       margin: 0.5%; }
     .Home .Newsletter .SignUp {
+      font-family: "PlayfairDisplay-Regular";
       width: 30%;
-      font-size: small;
+      font-size: medium;
       background-color: #556588;
       color: white;
       margin-top: 5%;
       margin-left: 70%; }
+
+.backtohome {
+  background-color: #556588;
+  font-family: "PlayfairDisplay-Regular";
+  color: white;
+  width: auto; }
+  .backtohome :hover {
+    color: darkgray; }
 
 footer {
   display: grid;
@@ -89,6 +98,8 @@ footer {
   background-color: whitesmoke;
   padding-top: 1%;
   padding-bottom: 0.5%; }
+  footer .Privacy {
+    color: black; }
 
 @media screen and (min-width: 768px) {
   .Home {
@@ -136,25 +147,38 @@ li a:hover {
   background-color: #baaab8;
   width: 30%; }
 
-.event li {
+.event-schedule li {
   display: block;
-  font-weight: bold; }
+  margin: auto;
+  text-align: center;
+  font-weight: bold;
+  font-family: "PlayfairDisplay-Regular";
+  background-color: whitesmoke;
+  width: 100%;
+  margin-bottom: 10px;
+  border: 7px solid #7d667a;
+  padding: 15px; }
+
+@media screen and (min-width: 768px) {
+  .event-schedule li {
+    width: 60%; } }
+
+iframe {
+  width: 100%; }
+
+@media screen and (min-width: 768px) {
+  iframe {
+    display: inline-block;
+    width: 40%;
+    margin: 4%; } }
 
 .AboutUs {
   width: auto;
   background-color: whitesmoke;
   margin-bottom: 50px;
   border: 7px solid #7d667a;
-  padding: 30px; }
-
-.FigureClass {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: baseline;
-  align-content: space-evenly;
-  font-family: "PlayfairDisplay-Regular"; }
+  padding: 30px;
+  margin: 2%; }
 
 textarea {
   width: 40%;
@@ -179,9 +203,10 @@ input[type=submit] {
   width: 50%; }
 
 .Event, .ContactBounce {
-  display: flex;
-  align-self: center;
-  width: 20%;
+  display: block;
+  font-family: "PlayfairDisplay-Regular";
+  margin: auto;
+  width: 25%;
   font-size: 15px;
   background-color: #556588;
   color: white;
@@ -190,18 +215,6 @@ input[type=submit] {
 @keyframes bounce {
   to {
     transform: scale(1.2); } }
-
-.ImgRight:hover {
-  transform: scale(1.5) translateX(220px);
-  transition: all 2s;
-  padding: 3em;
-  background-color: #bdacbb; }
-
-.ImgLeft:hover {
-  transform: scale(1.5) translateX(-220px);
-  transition: all 2s;
-  padding: 3em;
-  background-color: #bdacbb; }
 
 .table {
   background-color: #c8bcc6;
