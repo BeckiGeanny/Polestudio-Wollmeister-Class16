@@ -107,16 +107,22 @@ nav{
     }
 }
 
-.backtohome {
-    background-color: $button-colour;
-    font-family: $body-font;
-    color: white;
-    width: auto;
-    :hover {
-        color: darkgray;
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 1%;
+    .backtohome {
+        background-color: $button-colour;
+        font-family: $body-font;
+        color: white;
+        width: auto;
+        :hover {
+            color: darkgray;
+        }
     }
-
 }
+
 
 footer {
     display: grid;
@@ -134,29 +140,6 @@ footer {
         color: black;
     }
 }
-
-@media screen and (min-width: 768px) {
-    .Home {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(2, 1fr);
-    row-gap: 10%;
-    column-gap: 5%;
-    place-items: justify;
-    place-content: justify;
-    margin-left: 2%;
-    margin-right: 2%;
-    }
-    h1 {
-        font-size: 90pt;
-    }
-    body {
-        background: url("../img/Poledance1.png");
-        background-repeat: no-repeat;
-        background-attachment: fixed
-    }
-}
-
-
 
 ul {
     list-style-type: none;
@@ -210,20 +193,9 @@ li a {
     padding: 15px;
     
 }
-@media screen and (min-width: 768px) {
-    .event-schedule li {
-        width: 60%;
-    }
-}
-iframe {
+
+.iframe-container {
     width: 100%;
-}
-@media screen and (min-width: 768px) {
-    iframe {
-        display: inline-block;
-        width: 40%;
-        margin: 4%;
-    }
 }
 
 .AboutUs {
@@ -234,18 +206,17 @@ iframe {
     padding: $padding-text-box;
     margin: 2%;
 }
+.FigureClass {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: "PlayfairDisplay-Regular";
+     }
 
-// .FigureClass {
-//     display: flex;
-//     flex-direction: row;
-//     flex-wrap: wrap;
-//     justify-content: space-evenly;
-//     align-items: baseline;
-//     align-content: space-evenly;
-//     font-family: "PlayfairDisplay-Regular";
-
-// }
-
+.imageWidth {
+    max-width: 100%;
+    height: auto;
+}
 
 textarea {
     width: 40%;
@@ -292,26 +263,6 @@ input[type=submit] {
     @extend .Event;
 }
 
-// .ImgRight:hover {
-//    transform: scale(1.5) translateX(220px);
-//    transition: all 2s;
-//    padding: 3em;
-//    background-color: #bdacbb;
-
-// }
-
-// @mixin IMGhover {
-//     transition: all 2s;
-//     padding: 3em;
-//     background-color: #bdacbb;
-//   }
-
-// .ImgLeft:hover {
-//     transform: scale(1.5) translateX(-220px);
-//     @include IMGhover;
-    
-// }
-
 .table {
     background-color: #c8bcc6;
     width: auto;
@@ -324,6 +275,13 @@ input[type=submit] {
     border: $border;
     padding: $padding-text-box;
 }
+
+.ContactForm {
+    display: flex;
+    flex-direction: column;
+    flex-wrap:nowrap;
+}
+
 
   $socialmedia:(  
 Facebook:  #4267B2,
@@ -350,6 +308,60 @@ Google: #4285F4
     padding-right: 6px;
  }
 
-  
+ @media screen and (min-width: 768px) {
+    .Home {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 10%;
+    column-gap: 5%;
+    place-items: justify;
+    place-content: justify;
+    margin-left: 2%;
+    margin-right: 2%;
+    }
+    h1 {
+        font-size: 90pt;
+    }
+    body {
+        background: url("../img/Poledance1.png");
+        background-repeat: no-repeat;
+        background-attachment: fixed
+    }
+    .event-schedule li {
+            width: 60%;
+        }
+    .iframe-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin-bottom: 2%;
+        }
+    .FigureClass {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: baseline;
+        align-content: space-evenly;
+        font-family: "PlayfairDisplay-Regular";
+         }
+    .ImgRight:hover {
+        transform: scale(1.5) translateX(220px);
+        transition: all 2s;
+        padding: 3em;
+        background-color: #bdacbb;
+        }
+
+    @mixin IMGhover {
+        transition: all 2s;
+        padding: 3em;
+        background-color: #bdacbb;
+        }
+
+    .ImgLeft:hover {
+        transform: scale(1.5) translateX(-220px);
+         @include IMGhover;
+        }
+}
 
  
