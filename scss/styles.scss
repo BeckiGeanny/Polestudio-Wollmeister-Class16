@@ -12,22 +12,35 @@
     font-family: "PlayfairDisplay-Regular";
     src: url('../fonts/PlayfairDisplay-Regular.otf');
 }
+@mixin ButtonDesign {
+    background-color: $button-colour;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
+@mixin TextboxDesign {
+    background-color: $background-colour-text;
+    border: $border;
+    padding: $padding-text-box;
+    
+}
 body {
     background-image: linear-gradient(to right top, #f2f2f2, #e8e6eb, #e0dae3, #daceda, #d5c1d0);
     background-repeat: no-repeat;
     background-attachment: fixed
     }
-    
+
     h1 {
         color: $main-colour;
         background-color: $background-colour-text;
         text-align: center;
         font-size: 30pt;
         font-family: "AlexBrush-Regular";
-    
+
     }
-    
+
     h2 {
         font: {
             family: "PlayfairDisplay-Regular";
@@ -36,7 +49,7 @@ body {
         color: $secondary-colour;
         text-align: left;
     }
-    
+
     h3 {
         font: {
             family: "PlayfairDisplay-Regular";
@@ -71,39 +84,35 @@ nav{
     place-items: center;
     place-content: center;
     align-content: flex-start;
+    margin-bottom: 10%;
 
     .PoleDance {
-        background-color: $background-colour-text;
-        border: $border;
+        @include TextboxDesign;
         box-align: center;
         padding: 30px;
     }
 
     .UEvents {
-        background-color: $background-colour-text;
-        border: $border;
-        padding: $padding-text-box;
+        @include TextboxDesign;
+    
     }
 
     .Newsletter {
-        background-color: $background-colour-text;
-        border: $border;
-        padding: $padding-text-box;
-    
+        @include TextboxDesign;
+
         input {
             width: 100%;
             margin: 0.5%;
         }
         .SignUp {
+            @include ButtonDesign;
             font-family: $body-font;
             width: 30%;
             font-size: medium;
-            background-color: $button-colour;
-            color: white;
             margin-top: 5%;
             margin-left: 70%;
         }
-    
+
     }
 }
 
@@ -113,14 +122,15 @@ nav{
     justify-content: flex-end;
     margin-right: 1%;
     .backtohome {
-        background-color: $button-colour;
+        @include ButtonDesign;
         font-family: $body-font;
-        color: white;
+        padding: 5px;
         width: auto;
+        margin-top: 5%;
         :hover {
-            color: darkgray;
-        }
+           color: darkgray;
     }
+}
 }
 
 
@@ -141,20 +151,39 @@ footer {
     }
 }
 
-ul {
+//Page: News
+
+
+.WhatsNew{
+    @extend.schedule;
+}
+.NewsPage{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    row-gap: 0.5%;
+    column-gap: 30%;
+    place-items: center;
+    place-content: center;
+    align-content: flex-start;
+    margin-bottom: 10%;
+}
+.News {
+    @include TextboxDesign;
+}
+
+ul, li {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     font-family: "PlayfairDisplay-Regular";
-
 }
 
-li {
-    display: inline-block;
+.magazine {
+    @include TextboxDesign;
 }
-
-li a {
+.magazine li a {
      display: block;
      text-align: justify;
      text-decoration: none;
@@ -162,20 +191,31 @@ li a {
      background-color: rgb(190, 187, 183);
  }
 
- li a:hover {
-     background-color: rgb(183, 155, 183);
- }
-
-.products li {
-    display: block;
+.Product-Container {
+    @include TextboxDesign;
+    width: 100%;
 }
 
 .products li a {
     text-align: justify;
     text-decoration: none;
-    background-color: #baaab8;
-    width: 30%;
+    background-color: rgb(190, 187, 183);
 }
+li a:hover {
+    background-color: rgb(183, 155, 183);
+}
+
+.carouselProducts {
+    @include TextboxDesign;
+}
+
+
+
+
+
+
+
+
 .Event-Box {
     @extend .schedule;
 }
@@ -191,7 +231,7 @@ li a {
     margin-bottom: 10px;
     border: $border;
     padding: 15px;
-    
+
 }
 
 .iframe-container {
@@ -199,11 +239,9 @@ li a {
 }
 
 .AboutUs {
+    @include TextboxDesign;
     width: auto;
-    background-color: $background-colour-text;
     margin-bottom: 50px;
-    border: $border;
-    padding: $padding-text-box;
     margin: 2%;
 }
 .FigureClass {
@@ -218,42 +256,16 @@ li a {
     height: auto;
 }
 
-textarea {
-    width: 40%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-}
-
-input[type=submit] {
-    background-color: #7d667a;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.News {
-    background-color: $background-colour-text;
-    width: 50%;
-}
-
 .Event {
+    @include ButtonDesign;
     display: block;
     font-family: "PlayfairDisplay-Regular";
     margin:auto;
     width: 25%;
     font-size: 15px;
-    background-color: $button-colour;
-    color: white;
     animation: bounce 1.5s infinite alternate;
 }
-    
+
 @keyframes bounce {
     to { transform: scale(1.2);
     }
@@ -271,19 +283,46 @@ input[type=submit] {
 }
 
 .col-md-8 {
-    background-color: $background-colour-text;
-    border: $border;
-    padding: $padding-text-box;
+    @include TextboxDesign;
 }
 
-.ContactForm {
+.ContactUs {
+    @extend .schedule;
+}
+
+.Contact-Container {
     display: flex;
     flex-direction: column;
-    flex-wrap:nowrap;
+    align-items: center;
+    
+    .NameEmail {
+        width: 100%;
+        border: $border;
+        padding: 5px;
+        margin-bottom: 4%;
+    }
+
+    textarea {   
+        width: 100%;
+        padding: 12px;
+        border: $border;
+        margin-top: 10px;
+        margin-bottom: 10px;
+     }
+
+    .input-container {
+        display: flex;
+        justify-content: space-between;
+     }
+    input[type=submit] {
+        width: 45%;
+        @include ButtonDesign;
+        padding: 12px;
+        margin: 0%;
+    }
 }
 
-
-  $socialmedia:(  
+  $socialmedia:(
 Facebook:  #4267B2,
 Instagram: #E1306C,
 Google: #4285F4
@@ -328,13 +367,13 @@ Google: #4285F4
         background-attachment: fixed
     }
     .event-schedule li {
-            width: 60%;
+        width: 60%;
         }
     .iframe-container {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            margin-bottom: 2%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-bottom: 2%;
         }
     .FigureClass {
         display: flex;
@@ -345,23 +384,56 @@ Google: #4285F4
         align-content: space-evenly;
         font-family: "PlayfairDisplay-Regular";
          }
-    .ImgRight:hover {
-        transform: scale(1.5) translateX(220px);
-        transition: all 2s;
-        padding: 3em;
-        background-color: #bdacbb;
-        }
-
     @mixin IMGhover {
         transition: all 2s;
         padding: 3em;
         background-color: #bdacbb;
         }
 
+    .ImgRight:hover {
+        transform: scale(1.5) translateX(220px);
+        @include IMGhover;
+        }
+        
     .ImgLeft:hover {
         transform: scale(1.5) translateX(-220px);
-         @include IMGhover;
+        @include IMGhover;
+        }
+       
+    .Contact-Container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+        .NameEmail {
+            border: $border;
+            padding: 5px;
+            margin-bottom: 1%;
+            }
+        
+        textarea {   
+            padding: 12px;
+            border: $border;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        
+        input[type=submit] {
+            @include ButtonDesign;
+            padding: 12px;
+        }
+    }    
+    .NewsPage {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        row-gap: 10%;
+        column-gap: 5%;
+        place-items: justify;
+        place-content: justify;
+        margin-left: 2%;
+        margin-right: 2%;
         }
 }
 
- 
+
+

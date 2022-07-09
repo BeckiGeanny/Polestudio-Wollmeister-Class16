@@ -37,7 +37,7 @@ h3 {
 p {
   font-family: "PlayfairDisplay-Regular"; }
 
-.schedule, .Event-Box {
+.schedule, .WhatsNew, .Event-Box, .ContactUs {
   background-color: whitesmoke;
   text-align: center;
   margin-bottom: 3%; }
@@ -53,10 +53,12 @@ nav {
   column-gap: 30%;
   place-items: center;
   place-content: center;
-  align-content: flex-start; }
+  align-content: flex-start;
+  margin-bottom: 10%; }
   .Home .PoleDance {
     background-color: whitesmoke;
     border: 7px solid #7d667a;
+    padding: 30px;
     box-align: center;
     padding: 30px; }
   .Home .UEvents {
@@ -71,11 +73,14 @@ nav {
       width: 100%;
       margin: 0.5%; }
     .Home .Newsletter .SignUp {
+      background-color: #556588;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
       font-family: "PlayfairDisplay-Regular";
       width: 30%;
       font-size: medium;
-      background-color: #556588;
-      color: white;
       margin-top: 5%;
       margin-left: 70%; }
 
@@ -86,9 +91,14 @@ nav {
   margin-right: 1%; }
   .button-container .backtohome {
     background-color: #556588;
-    font-family: "PlayfairDisplay-Regular";
     color: white;
-    width: auto; }
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "PlayfairDisplay-Regular";
+    padding: 5px;
+    width: auto;
+    margin-top: 5%; }
     .button-container .backtohome :hover {
       color: darkgray; }
 
@@ -106,34 +116,59 @@ footer {
   footer .Privacy {
     color: black; }
 
-ul {
+.NewsPage {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  row-gap: 0.5%;
+  column-gap: 30%;
+  place-items: center;
+  place-content: center;
+  align-content: flex-start;
+  margin-bottom: 10%; }
+
+.News {
+  background-color: whitesmoke;
+  border: 7px solid #7d667a;
+  padding: 30px; }
+
+ul, li {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   font-family: "PlayfairDisplay-Regular"; }
 
-li {
-  display: inline-block; }
+.magazine {
+  background-color: whitesmoke;
+  border: 7px solid #7d667a;
+  padding: 30px; }
 
-li a {
+.magazine li a {
   display: block;
   text-align: justify;
   text-decoration: none;
   padding: 8px;
   background-color: #bebbb7; }
 
-li a:hover {
-  background-color: #b79bb7; }
-
-.products li {
-  display: block; }
+.Product-Container {
+  background-color: whitesmoke;
+  border: 7px solid #7d667a;
+  padding: 30px;
+  width: 100%; }
 
 .products li a {
   text-align: justify;
   text-decoration: none;
-  background-color: #baaab8;
-  width: 30%; }
+  background-color: #bebbb7; }
+
+li a:hover {
+  background-color: #b79bb7; }
+
+.carouselProducts {
+  background-color: whitesmoke;
+  border: 7px solid #7d667a;
+  padding: 30px; }
 
 .event-schedule li {
   display: block;
@@ -151,11 +186,11 @@ li a:hover {
   width: 100%; }
 
 .AboutUs {
-  width: auto;
   background-color: whitesmoke;
-  margin-bottom: 50px;
   border: 7px solid #7d667a;
   padding: 30px;
+  width: auto;
+  margin-bottom: 50px;
   margin: 2%; }
 
 .FigureClass {
@@ -168,36 +203,17 @@ li a:hover {
   max-width: 100%;
   height: auto; }
 
-textarea {
-  width: 40%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical; }
-
-input[type=submit] {
-  background-color: #7d667a;
+.Event, .ContactBounce {
+  background-color: #556588;
   color: white;
-  padding: 12px 20px;
   border: none;
   border-radius: 4px;
-  cursor: pointer; }
-
-.News {
-  background-color: whitesmoke;
-  width: 50%; }
-
-.Event, .ContactBounce {
+  cursor: pointer;
   display: block;
   font-family: "PlayfairDisplay-Regular";
   margin: auto;
   width: 25%;
   font-size: 15px;
-  background-color: #556588;
-  color: white;
   animation: bounce 1.5s infinite alternate; }
 
 @keyframes bounce {
@@ -215,10 +231,33 @@ input[type=submit] {
   border: 7px solid #7d667a;
   padding: 30px; }
 
-.ContactForm {
+.Contact-Container {
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap; }
+  align-items: center; }
+  .Contact-Container .NameEmail {
+    width: 100%;
+    border: 7px solid #7d667a;
+    padding: 5px;
+    margin-bottom: 4%; }
+  .Contact-Container textarea {
+    width: 100%;
+    padding: 12px;
+    border: 7px solid #7d667a;
+    margin-top: 10px;
+    margin-bottom: 10px; }
+  .Contact-Container .input-container {
+    display: flex;
+    justify-content: space-between; }
+  .Contact-Container input[type=submit] {
+    width: 45%;
+    background-color: #556588;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 12px;
+    margin: 0%; }
 
 .icon-Facebook {
   background-color: #4267B2;
@@ -296,4 +335,33 @@ input[type=submit] {
     transform: scale(1.5) translateX(-220px);
     transition: all 2s;
     padding: 3em;
-    background-color: #bdacbb; } }
+    background-color: #bdacbb; }
+  .Contact-Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    .Contact-Container .NameEmail {
+      border: 7px solid #7d667a;
+      padding: 5px;
+      margin-bottom: 1%; }
+    .Contact-Container textarea {
+      padding: 12px;
+      border: 7px solid #7d667a;
+      margin-top: 10px;
+      margin-bottom: 10px; }
+    .Contact-Container input[type=submit] {
+      background-color: #556588;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      padding: 12px; }
+  .NewsPage {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 10%;
+    column-gap: 5%;
+    place-items: justify;
+    place-content: justify;
+    margin-left: 2%;
+    margin-right: 2%; } }
